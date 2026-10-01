@@ -1,20 +1,48 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {},
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "deepseek-r1:32b": { "name": "deepseek-r1:32b" },
+        "qwen3.6:35b": { "name": "qwen3.6:35b" },
+        "starcoder2:15b": { "name": "starcoder2:15b" },
+        "tarruda/neuraldaredevil-8b-abliterated:fp16": { "name": "tarruda/neuraldaredevil-8b-abliterated:fp16" },
+        "qwen3-coder:30b": { "name": "qwen3-coder:30b" },
+        "mixtral:latest": { "name": "mixtral:latest" },
+        "mistral-small3.1:latest": { "name": "mistral-small3.1:latest" },
+		"qwen3.8:27b": { "name": "qwen3.8:27b" },
+        "gemma4:12b": { "name": "gemma4:12b" },
+        "gemma3:4b": { "name": "gemma3:4b" }
+      }
+    }
+  },
   "permission": {},
   "references": {
     "effect": {
       "repository": "github.com/Effect-TS/effect-smol",
-      "description": "Use for Effect v4 and effect-smol implementation details",
+      "description": "Use for Effect v4 and effect-smol implementation details"
     },
     "opencode-local": {
       "path": "~/.local/share/opencode",
-      "description": "Contains opencode logs and data",
-    },
+      "description": "Contains opencode logs and data"
+    }
   },
-  "mcp": {},
+  "mcp": {
+    "kip-memory": {
+      "type": "local",
+      "command": ["python", "E:/AgentMemoryProject/opencode/kip-scripts/memory-mcp-server.py"],
+      "timeout": 15000
+    }
+  },
   "tools": {
     "github-triage": false,
-    "github-pr-search": false,
+    "github-pr-search": false
   },
+  "plugin": ["E:/AgentMemoryProject/opencode/kip-plugin"]
+  
 }
